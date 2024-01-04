@@ -12,6 +12,11 @@ table td a{
    padding: 75px 75px;
  } 
 
+.title {
+    margin-top: 50px;
+}
+
+
 th {
     background: rgb(170, 170, 170);
   }
