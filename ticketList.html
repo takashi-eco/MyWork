@@ -16,6 +16,7 @@
       <a class="navbar-brand" href="">千葉マーリンズ主催試合チケット購入</a>
       <!-- Button trigger modal -->
       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <!-- ログイン状態ではログアウトと表示したい -->
         <div class="login">会員ログイン</div>
       </button>
 
@@ -28,13 +29,16 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              ...
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">
-                <input type="submit">
-              </button>
+              <form action="" method="post">
+                <input type="text">
+            <!-- </div> -->
+            <!-- <div class="modal-footer"> -->
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">キャンセル</button>
+                  <input type="submit" class="btn btn-primary" value="ログイン">
+                    <!-- <input type="submit" value="ログイン"> -->
+                  </input>
+
+              </form>
             </div>
           </div>
         </div>
