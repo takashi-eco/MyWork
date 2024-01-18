@@ -1,108 +1,149 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>チケット一覧</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 </head>
+
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-          <a class="navbar-brand" href="">千葉ロッテマリーンズ主催試合チケット購入</a>
-        </div>
-      </nav>
-      <div class="container">
-        <form action="" method="post">
-          <div class="my-5">
-              試合予定日: <input type="date" name="expDate" id="expDate" class="mr-5">
-            <input class="btn btn-primary" type="submit" value="検索">
-          </div>
-        </form>
-      
-        <!-- <div class="my-5">  
-          <a class="btn btn-success active" href="" >全アイテム</a>
-          <a class="btn btn-secondary" href="expired.html" >期限切れアイテム</a>
-        </div> -->
-      
-        <table class="table table-hover">
-          <thead class="table-dark">
-            <tr>
-              <th>日付</th>
-              <th>対戦チーム</th>
-              <th>割引ステータス</th>
-              <th>チケット販売状況</th>
-            </tr>
-          </thead>
-          <tbody>
-                <tr>
-                    <td>2024年02月02日(金)</td>
-                    <td>西武ライオンズ</td>
-                    <td><img class="rain" src="images/rain.png" width="16px">雨割引</td>
-                    <td>
-                        S席<span class="aki">◎</span> A席<span class="sukunai">△</span>
-                        <a href="" class="btn btn-danger"
-                                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .75rem; --bs-btn-font-size: .75rem;">詳細へ</a  href="">
-                    </td>
-                </tr>
-                <tr>
-                    <td>2024年02月03日(土)</td>
-                    <td>西武ライオンズ</td>
-                    <td>なし</td>
-                    <td>
-                        S席<span class="aki">◎</span> A席<span class="sukunai">△</span>
-                        <a href="detail.html" class="btn btn-danger"
-                                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .75rem; --bs-btn-font-size: .75rem;">詳細へ</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2024年02月04日(日)</td>
-                    <td>西武ライオンズ</td>
-                    <td>なし</td>
-                    <td>
-                        S席<span class="aki">◎</span> A席<span class="sukunai">△</span>
-                        <a href="detail.html" class="btn btn-danger"
-                                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .75rem; --bs-btn-font-size: .75rem;">詳細へ</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2024年02月13日(火)</td>
-                    <td>オリックスバファローズ</td>
-                    <td>早割り</td>
-                    <td>
-                        S席<span class="aki">◎</span> A席<span class="sukunai">△</span>
-                        <a href="detail.html" class="btn btn-danger"
-                                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .75rem; --bs-btn-font-size: .75rem;">詳細へ</a>
-                    </td>
-                    
-                </tr>
-                <tr>
-                    <td>2024年02月14日(水)</td>
-                    <td>オリックスバファローズ</td>
-                    <td>早割り</td>
-                    <td>
-                        S席<span class="aki">◎</span> A席<span class="sukunai">△</span>
-                        <a href="detail.html" class="btn btn-danger"
-                                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .75rem; --bs-btn-font-size: .75rem;">詳細へ</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2024年02月15日(木)</td>
-                    <td>オリックスバファローズ</td>
-                    <td>早割り</td>
-                    <td>
-                        S席<span class="aki">◎</span> A席<span class="sukunai">△</span>
-                        <a href="detail.html" class="btn btn-danger"
-                                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .75rem; --bs-btn-font-size: .75rem;">詳細へ</a>
-                    </td>
-                </tr>
-            </div><!-- /.accordion -->
-          </tbody>
-        </table>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="">千葉マーリンズ主催試合チケット購入</a>
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <!-- ログイン状態ではログアウトと表示したい -->
+        <div class="login">会員ログイン</div>
+      </button>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">ログイン</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form action="" method="post">
+                <p>メールアドレス：<input type="email"></p>
+                <p>パスワード：<input type="password"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">キャンセル</button>
+                <input type="submit" class="btn btn-primary" value="ログイン">
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </nav>
+  <div class="container">
+    <form action="" method="post">
+      <div class="my-5">
+        試合予定日: <input type="date" name="gameDate" id="gameDate" class="mr-5">
+        <input class="btn btn-primary" type="submit" value="検索">
+      </div>
+    </form>
+
+    <table class="table table-hover">
+      <thead class="table-dark">
+        <tr>
+          <th>日付</th>
+          <th>対戦チーム</th>
+          <th>チケット販売状況</th>
+          <th>詳細</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="detail.html">2024年02月02日(金)</a></td>
+          <td><a href="detail.html">埼玉ライナーズ</a></td>
+          <td><a href="detail.html">
+              <p><span style="color: red;">販売期間中</span><br>
+                ～2024年02月01日(木)</p>
+            </a>
+          <td><a href="detail.html"><span class="btn btn-danger"
+                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .75rem; --bs-btn-font-size: .75rem;">詳細へ</span></a>
+          </td>
+          </a>
+          </td>
+        </tr>
+        <tr>
+          <td><a href="detail.html">2024年02月03日(土)</a></td>
+          <td><a href="detail.html">埼玉ライナーズ</a></td>
+          <td><a href="detail.html">
+              <p><span style="color: red;">販売期間中</span><br>
+                ～2024年02月02日(金)</p>
+            </a>
+          <td><a href="detail.html"><span class="btn btn-danger"
+                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .75rem; --bs-btn-font-size: .75rem;">詳細へ</span></a>
+          </td>
+        </tr>
+        <tr>
+          <td><a href="detail.html">2024年02月04日(日)</a></td>
+          <td><a href="detail.html">埼玉ライナーズ</a></td>
+          <td><a href="detail.html">
+              <p><span style="color: red;">販売期間中</span><br>
+                ～2024年02月03日(土)</p>
+            </a>
+          <td><a href="detail.html"><span class="btn btn-danger"
+                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .75rem; --bs-btn-font-size: .75rem;">詳細へ</span></a>
+          </td>
+        </tr>
+        <tr>
+          <td><a href="detail.html">2024年02月13日(火)</a></td>
+          <td><a href="detail.html">大阪ブルズ</a></td>
+          <td><a href="detail.html">
+              <p><span style="color: red;">販売期間中</span><br>
+                ～2024年02月012日(月)</p>
+            </a>
+          <td><a href="detail.html"><span class="btn btn-danger"
+                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .75rem; --bs-btn-font-size: .75rem;">詳細へ</span></a>
+          </td>
+        </tr>
+        <tr>
+          <td><a href="detail.html">2024年02月14日(水)</a></td>
+          <td><a href="detail.html">大阪ブルズ</a></td>
+          <td><a href="detail.html">
+              <p><span style="color: red;">販売期間中</span><br>
+                ～2024年02月13日(火)</p>
+            </a>
+          <td><a href="detail.html"><span class="btn btn-danger"
+                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .75rem; --bs-btn-font-size: .75rem;">詳細へ</span></a>
+          </td>
+        </tr>
+        <tr>
+          <td><a href="detail.html">2024年02月15日(木)</a></td>
+          <td><a href="detail.html">大阪ブルズ</a></td>
+          <td><a href="detail.html"></a>
+            <p><span style="color: red;">販売期間中</span><br>
+              ～2024年02月14日(水)</p>
+          <td><a href="detail.html"><span class="btn btn-danger"
+                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .75rem; --bs-btn-font-size: .75rem;">詳細へ</span></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    const myModal = document.getElementById('myModal')
+    const myInput = document.getElementById('myInput')
+
+    myModal.addEventListener('shown.bs.modal', () => {
+      myInput.focus()
+    })
+
+  </script>
 </body>
+
 </html>

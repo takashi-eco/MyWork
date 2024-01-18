@@ -1,5 +1,27 @@
 @charset "UTF-8";
 
+.login {
+    color: white;
+    text-align: right;
+}
+
+table td {
+    overflow: hidden;
+}
+
+table td a{
+    color: black;
+    text-decoration: none;
+    display: block;
+    margin: -75px;
+    padding: 75px 75px;
+ } 
+
+.title {
+    margin-top: 50px;
+}
+
+
 th {
     background: rgb(170, 170, 170);
   }
